@@ -21,13 +21,13 @@ npm install gulp-cdn --save-dev
 ```javascript
 var gulp = require('gulp');
 var cdn = require('gulp-cdn');
-gulp("default", function() {
-return gulp.src("./src/*.html")
-.pipe(cdn({
-	domain: "http://localhost",
-	cdn: "http://cdn"
-}))
-.pipe(gulp.dest("./dist/"))
+gulp.task("default", function() {
+	return gulp.src("./src/*.html")
+		.pipe(cdn({
+			domain: "http://localhost",
+			cdn: "http://cdn"
+		}))
+		.pipe(gulp.dest("./dist/"))
 })
 ```
 或者数组配置
@@ -35,16 +35,16 @@ return gulp.src("./src/*.html")
 ```javascript
 var gulp = require('gulp');
 var cdn = require('gulp-cdn');
-gulp("default", function() {
-return gulp.src("./src/*.html")
-.pipe(cdn([{
-	domain: "http://localhost",
-	cdn: "http://cdn"
-},{
-	domain: "http://localhost2",
-	cdn: "http://cdn2"
-}]))
-.pipe(gulp.dest("./dist/"))
+gulp.task("default", function() {
+	return gulp.src("./src/*.html")
+		.pipe(cdn([{
+			domain: "http://localhost",
+			cdn: "http://cdn"
+		},{
+			domain: "http://localhost2",
+			cdn: "http://cdn2"
+		}]))
+		.pipe(gulp.dest("./dist/"))
 })
 ```
 

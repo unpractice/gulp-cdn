@@ -21,13 +21,13 @@ npm install gulp-cdn --save-dev
 ```Javascript
 var gulp = require('gulp');
 var cdn = require('gulp-cdn');
-gulp("default", function(){
-return gulp.src ("./src/*.html")
-.pipe(cdn({
-domain:"http://localhost",
-cdn:"http://cdn"
-}))
-.pipe (gulp.dest("./dist/"))
+gulp.task("default", function(){
+	return gulp.src ("./src/*.html")
+		.pipe(cdn({
+			domain:"http://localhost",
+			cdn:"http://cdn"
+		}))
+		.pipe (gulp.dest("./dist/"))
 })
 ```
 or array config
@@ -35,16 +35,16 @@ or array config
 ```Javascript
 var gulp = require('gulp');
 var cdn = require('gulp-cdn');
-gulp("default", function(){
-return gulp.src ("./src/*.html")
-.pipe(cdn([{
-domain:"http://localhost",
-cdn:"http://cdn"
-},{
-domain:"http://localhost2",
-cdn:"http://cdn2"
-}]))
-.pipe (gulp.dest("./dist/"))
+gulp.task("default", function(){
+	return gulp.src ("./src/*.html")
+		.pipe(cdn([{
+			domain:"http://localhost",
+			cdn:"http://cdn"
+		},{
+			domain:"http://localhost2",
+			cdn:"http://cdn2"
+		}]))
+		.pipe (gulp.dest("./dist/"))
 })
 ```
 
